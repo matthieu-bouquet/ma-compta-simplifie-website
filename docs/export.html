@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exports — Ma Compta Simplifié</title>
+    <meta name="description" content="Exports depuis Ma Compta Simplifié." />
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="topbarInner">
+          <a class="brand" href="../" aria-label="Ma Compta Simplifié — Accueil">
+            <img src="../assets/logo.svg" alt="" />
+            <span>Ma Compta Simplifié</span>
+          </a>
+          <nav class="navLinks" aria-label="Navigation">
+            <a href="../">Accueil</a>
+            <a href="./">Documentation</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="docLayout">
+        <aside class="card docNav" aria-label="Sommaire">
+          <a href="./">Sommaire</a>
+          <a href="./premiers-pas.html">Premiers pas</a>
+          <a href="./saisie.html">Saisie des opérations</a>
+          <a href="./export.html" aria-current="page">Exports</a>
+        </aside>
+
+        <article class="card prose">
+          <p class="breadcrumbs"><a href="../">Accueil</a> › <a href="./">Docs</a> › Exports</p>
+          <h1>Exports</h1>
+
+          <p>
+            Les exports servent à partager vos données (ex. avec un cabinet) ou à archiver.
+          </p>
+
+          <h2>Conseils</h2>
+          <ul>
+            <li>Avant export, vérifiez que la période concernée est complète et cohérente.</li>
+            <li>Conservez une copie horodatée des exports importants.</li>
+            <li>Si vous joignez des pièces justificatives, veillez à la confidentialité (RGPD, données sensibles).</li>
+          </ul>
+
+          <p>
+            Retour au <a href="./">sommaire</a>.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>© <span id="year"></span> Ma Compta Simplifié.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ma Compta Simplifié — Comptabilité simple pour entreprises et associations</title>
+    <meta
+      name="description"
+      content="Ma Compta Simplifié est une application pour tenir une comptabilité claire et rigoureuse, pensée pour les entreprises et associations en France."
+    />
+    <link rel="icon" href="./assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="topbarInner">
+          <a class="brand" href="./" aria-label="Ma Compta Simplifié — Accueil">
+            <img src="./assets/logo.svg" alt="" />
+            <span>Ma Compta Simplifié</span>
+          </a>
+          <nav class="navLinks" aria-label="Navigation">
+            <a href="./" aria-current="page">Accueil</a>
+            <a href="./docs/">Documentation</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="heroGrid">
+            <div>
+              <h1 class="heroTitle">Votre compta, plus simple.</h1>
+              <p class="heroLead">
+                Une application pensée pour les <strong>entreprises</strong> et <strong>associations</strong> en France :
+                saisie, organisation, et export — sans complexité inutile.
+              </p>
+              <div class="actions">
+                <a class="btn btnPrimary" href="./docs/">Lire le manuel utilisateur</a>
+                <a class="btn btnSecondary" href="#telechargement">Téléchargement</a>
+              </div>
+            </div>
+
+            <aside class="card" aria-label="Aperçu">
+              <div class="kpiGrid">
+                <div class="kpi">
+                  <div class="kpiLabel">Public</div>
+                  <div class="kpiValue">Entreprises & associations</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpiLabel">Format</div>
+                  <div class="kpiValue">Application desktop</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpiLabel">Objectif</div>
+                  <div class="kpiValue">Clarté + rigueur</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpiLabel">Documentation</div>
+                  <div class="kpiValue">Manuel HTML</div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="sectionTitle">Ce que vous pouvez faire</h2>
+          <div class="featureGrid">
+            <article class="feature">
+              <h3>Saisir & suivre</h3>
+              <p>Saisissez vos opérations, gardez une vue claire, et retrouvez rapidement l’information.</p>
+            </article>
+            <article class="feature">
+              <h3>Structurer</h3>
+              <p>Organisez votre comptabilité avec des repères simples : périodes, journaux, pièces justificatives.</p>
+            </article>
+            <article class="feature">
+              <h3>Exporter</h3>
+              <p>Générez des exports adaptés à votre usage (ex. partage avec l’expert‑comptable).</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="telechargement" class="section">
+        <div class="container">
+          <h2 class="sectionTitle">Téléchargement</h2>
+          <div class="card">
+            <p>
+              Ajoutez ici vos liens de distribution (GitHub Releases, site, etc.). Exemple :
+              <code>https://github.com/&lt;org&gt;/accouting-app/releases</code>
+            </p>
+            <p class="note">
+              Astuce : si vous publiez sur GitHub, vous pouvez mettre un bouton par OS (macOS / Windows / Linux).
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>© <span id="year"></span> Ma Compta Simplifié. Documentation disponible dans la section “Docs”.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

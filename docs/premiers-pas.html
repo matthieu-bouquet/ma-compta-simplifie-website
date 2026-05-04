@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Premiers pas — Ma Compta Simplifié</title>
+    <meta name="description" content="Premiers pas avec Ma Compta Simplifié." />
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="topbarInner">
+          <a class="brand" href="../" aria-label="Ma Compta Simplifié — Accueil">
+            <img src="../assets/logo.svg" alt="" />
+            <span>Ma Compta Simplifié</span>
+          </a>
+          <nav class="navLinks" aria-label="Navigation">
+            <a href="../">Accueil</a>
+            <a href="./">Documentation</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="docLayout">
+        <aside class="card docNav" aria-label="Sommaire">
+          <a href="./">Sommaire</a>
+          <a href="./premiers-pas.html" aria-current="page">Premiers pas</a>
+          <a href="./saisie.html">Saisie des opérations</a>
+          <a href="./export.html">Exports</a>
+        </aside>
+
+        <article class="card prose">
+          <p class="breadcrumbs"><a href="../">Accueil</a> › <a href="./">Docs</a> › Premiers pas</p>
+          <h1>Premiers pas</h1>
+
+          <h2>1) Installer et lancer</h2>
+          <ol>
+            <li>Téléchargez l’application depuis votre canal de distribution.</li>
+            <li>Installez puis lancez l’application.</li>
+          </ol>
+
+          <h2>2) Créer votre contexte</h2>
+          <p>
+            Au premier démarrage, configurez les informations de base (organisation, période/exercice si applicable, et
+            préférences).
+          </p>
+
+          <h2>3) Votre premier flux</h2>
+          <ol>
+            <li>Ajoutez une opération.</li>
+            <li>Vérifiez la liste et la cohérence des informations.</li>
+            <li>Exportez si besoin pour partage/archivage.</li>
+          </ol>
+
+          <p>
+            Prochaine étape : <a href="./saisie.html">Saisie des opérations</a>.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>© <span id="year"></span> Ma Compta Simplifié.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

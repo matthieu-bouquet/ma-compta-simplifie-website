@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Documentation — Ma Compta Simplifié</title>
+    <meta name="description" content="Manuel utilisateur — Ma Compta Simplifié." />
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="topbarInner">
+          <a class="brand" href="../" aria-label="Ma Compta Simplifié — Accueil">
+            <img src="../assets/logo.svg" alt="" />
+            <span>Ma Compta Simplifié</span>
+          </a>
+          <nav class="navLinks" aria-label="Navigation">
+            <a href="../">Accueil</a>
+            <a href="./" aria-current="page">Documentation</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="docLayout">
+        <aside class="card docNav" aria-label="Sommaire">
+          <a href="./" aria-current="page">Sommaire</a>
+          <a href="./premiers-pas.html">Premiers pas</a>
+          <a href="./saisie.html">Saisie des opérations</a>
+          <a href="./export.html">Exports</a>
+        </aside>
+
+        <article class="card prose">
+          <p class="breadcrumbs"><a href="../">Accueil</a> › Docs</p>
+          <h1>Manuel utilisateur</h1>
+          <p>
+            Cette documentation décrit les principaux écrans et le flux d’utilisation de <strong>Ma Compta Simplifié</strong>.
+          </p>
+
+          <h2>Chapitres</h2>
+          <ul>
+            <li><a href="./premiers-pas.html">Premiers pas</a></li>
+            <li><a href="./saisie.html">Saisie des opérations</a></li>
+            <li><a href="./export.html">Exports</a></li>
+          </ul>
+
+          <h2>Besoin d’aide ?</h2>
+          <p>
+            Ajoutez ici vos canaux de support (email, formulaire, FAQ). Exemple : <code>support@votre-domaine.fr</code>
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>© <span id="year"></span> Ma Compta Simplifié.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
