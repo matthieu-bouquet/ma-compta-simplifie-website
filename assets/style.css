@@ -74,6 +74,8 @@ a:hover {
   width: 34px;
   height: 34px;
   border-radius: 10px;
+  background: color-mix(in srgb, var(--navFg) 92%, transparent);
+  padding: 4px;
   box-shadow: var(--shadowSm);
 }
 
