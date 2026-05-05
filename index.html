@@ -23,6 +23,7 @@
             <a href="./" aria-current="page">Accueil</a>
             <a href="./docs/">Documentation</a>
           </nav>
+          <div class="topbarRight" aria-hidden="true"></div>
         </div>
       </div>
     </header>
@@ -30,39 +31,41 @@
     <main>
       <section class="hero">
         <div class="container">
-          <div class="heroGrid">
-            <div>
-              <h1 class="heroTitle">Votre compta, plus simple.</h1>
-              <p class="heroLead">
-                Une application pensée pour les <strong>entreprises</strong> et <strong>associations</strong> en France :
-                saisie, organisation, et export — sans complexité inutile.
-              </p>
-              <div class="actions">
-                <a class="btn btnPrimary" href="./docs/">Lire le manuel utilisateur</a>
-                <a class="btn btnSecondary" href="#telechargement">Téléchargement</a>
-              </div>
+          <div class="heroInner">
+            <h1 class="heroTitle">Votre compta, plus simple.</h1>
+            <p class="heroLead">
+              Une application desktop pensée pour les <strong>entreprises</strong> et <strong>associations</strong> en France : saisie,
+              organisation, et export — sans complexité inutile.
+            </p>
+
+            <div class="heroArt">
+              <img
+                class="appScreenshot"
+                src="./assets/app-screenshot.png"
+                alt="Capture d’écran de Ma Compta Simplifié : saisie comptable"
+                loading="eager"
+                decoding="async"
+              />
             </div>
 
-            <aside class="card" aria-label="Aperçu">
-              <div class="kpiGrid">
-                <div class="kpi">
-                  <div class="kpiLabel">Public</div>
-                  <div class="kpiValue">Entreprises & associations</div>
-                </div>
-                <div class="kpi">
-                  <div class="kpiLabel">Format</div>
-                  <div class="kpiValue">Application desktop</div>
-                </div>
-                <div class="kpi">
-                  <div class="kpiLabel">Objectif</div>
-                  <div class="kpiValue">Clarté + rigueur</div>
-                </div>
-                <div class="kpi">
-                  <div class="kpiLabel">Documentation</div>
-                  <div class="kpiValue">Manuel HTML</div>
-                </div>
-              </div>
-            </aside>
+            <div class="actions heroDownloads" aria-label="Téléchargements">
+              <a
+                class="btn btnPrimary"
+                href="https://github.com/matthieu-bouquet/ma-compta-simplifie/releases/download/v0.1.0-alpha/MaComptaSimplifie-0.1.0-arm64.dmg"
+                >Télécharger macOS</a
+              >
+              <a
+                class="btn btnSecondary"
+                href="https://github.com/matthieu-bouquet/ma-compta-simplifie/releases/download/v0.1.0-alpha/MaComptaSimplifie-0.1.0.AppImage"
+                >Télécharger Linux</a
+              >
+            </div>
+
+            <p class="heroMeta">
+              Dernière version :
+              <a href="https://github.com/matthieu-bouquet/ma-compta-simplifie/releases/tag/v0.1.0-alpha">v0.1.0-alpha</a>.
+              <a href="https://github.com/matthieu-bouquet/ma-compta-simplifie/releases">Voir toutes les releases</a>.
+            </p>
           </div>
         </div>
       </section>
@@ -91,12 +94,9 @@
         <div class="container">
           <h2 class="sectionTitle">Téléchargement</h2>
           <div class="card">
-            <p>
-              Ajoutez ici vos liens de distribution (GitHub Releases, site, etc.). Exemple :
-              <code>https://github.com/&lt;org&gt;/accouting-app/releases</code>
-            </p>
             <p class="note">
-              Astuce : si vous publiez sur GitHub, vous pouvez mettre un bouton par OS (macOS / Windows / Linux).
+              La distribution se fait via GitHub Releases.
+              <a href="https://github.com/matthieu-bouquet/ma-compta-simplifie/releases/tag/v0.1.0-alpha">v0.1.0-alpha</a> (4 mai 2026).
             </p>
           </div>
         </div>
