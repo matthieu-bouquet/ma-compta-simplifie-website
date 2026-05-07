@@ -4,8 +4,10 @@ import starlight from '@astrojs/starlight';
 // We keep the marketing homepage at repository root (`/index.html`).
 // This Astro project only builds the documentation served under `/docs/`.
 export default defineConfig({
-  site: 'https://matthieu-bouquet.github.io/ma-compta-simplifie',
-  base: '/docs',
+  // GitHub Pages project site: https://<user>.github.io/<repo>/
+  // We serve the docs under: https://<user>.github.io/<repo>/docs/
+  site: 'https://matthieu-bouquet.github.io/ma-compta-simplifie-website',
+  base: '/ma-compta-simplifie-website/docs',
   outDir: './docs',
   integrations: [
     starlight({
