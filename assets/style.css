@@ -138,6 +138,79 @@ a:hover {
   justify-content: center;
 }
 
+.downloadGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.05rem;
+  width: min(820px, 100%);
+  margin: 2.5rem auto 0;
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 64px;
+  padding: 1.05rem 1.15rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadowSm);
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  text-decoration: none;
+  transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
+}
+
+.downloadBtn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 16px 42px -26px rgba(0, 0, 0, 0.65);
+}
+
+.downloadBtnIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.downloadBtnIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.downloadBtnLabel {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+
+.downloadBtnSub {
+  margin-top: 0.18rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  opacity: 0.78;
+}
+
+.downloadBtnMac {
+  background: #ffffff;
+  color: #0b1222;
+  border-color: rgba(15, 23, 42, 0.14);
+}
+
+.downloadBtnWindows {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: rgba(37, 99, 235, 0.55);
+}
+
+.downloadBtnLinux {
+  background: #e95420;
+  color: #ffffff;
+  border-color: rgba(233, 84, 32, 0.65);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -333,6 +406,12 @@ a:hover {
     grid-template-columns: 1fr;
   }
   .docLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .downloadGrid {
     grid-template-columns: 1fr;
   }
 }
