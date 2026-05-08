@@ -13,6 +13,11 @@ description: Installer, lancer, et préparer votre premier flux.
 - **Installation** : ouvrez le `.dmg` puis glissez l’app dans **Applications**.
 - **Premier lancement** : si macOS bloque l’ouverture (message de sécurité), faites **clic droit → Ouvrir** sur l’app, puis confirmez.
 - **Alternative** : allez dans **Réglages Système → Confidentialité et sécurité** puis, dans la section sécurité, cliquez sur **Ouvrir quand même** pour cette app.
+- **Si macOS affiche “est endommagé…”** : retirez la quarantaine, puis relancez l’app.
+
+```bash
+sudo xattr -cr "/Applications/MaComptaSimplifie.app"
+```
 
 ## 2) Créer votre contexte
 
