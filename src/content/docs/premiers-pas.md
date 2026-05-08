@@ -8,6 +8,12 @@ description: Installer, lancer, et préparer votre premier flux.
 1. Téléchargez l’application depuis GitHub Releases.
 2. Installez puis lancez l’application.
 
+### Installation (macOS)
+
+- **Installation** : ouvrez le `.dmg` puis glissez l’app dans **Applications**.
+- **Premier lancement** : si macOS bloque l’ouverture (message de sécurité), faites **clic droit → Ouvrir** sur l’app, puis confirmez.
+- **Alternative** : allez dans **Réglages Système → Confidentialité et sécurité** puis, dans la section sécurité, cliquez sur **Ouvrir quand même** pour cette app.
+
 ## 2) Créer votre contexte
 
 Avant la saisie, préparez les éléments structurants :
