@@ -42,6 +42,7 @@ export default defineConfig({
         {
           label: 'Éditions & pilotage',
           items: [
+            { label: 'Grand livre', slug: 'editions/grand-livre' },
             { label: 'Édition du bilan', slug: 'editions/bilan' },
             { label: 'Prévisionnel pour l’exercice suivant', slug: 'editions/previsionnel' },
           ],
