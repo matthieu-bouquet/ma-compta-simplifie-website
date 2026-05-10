@@ -7,8 +7,8 @@ Bienvenue dans la documentation de **Ma Compta Simplifié**.
 
 ## Ce que l’application permet (vue d’ensemble)
 
-- **Configurer votre contexte** (entité, plan comptable, exercices).
-- **Saisir des opérations** (lignes comptables) de manière régulière et organisée.
+- **Configurer votre contexte** (entité — dont l’option **assujetti à la TVA**, plan comptable, exercices et **soldes de départ** des comptes de trésorerie).
+- **Saisir des opérations** : modes guidés **dépense / recette** (payé ou dette/créance), **règlement fournisseur / encaissement client**, ou **saisie avancée** multi-lignes.
 - **Attacher des justificatifs** (factures, reçus, etc.) pour garder une piste claire.
 - **Gérer des cas d’usage association** comme la **comptabilisation des dons**.
 - **Produire des éditions** (ex. bilan) et préparer le **prévisionnel**.
