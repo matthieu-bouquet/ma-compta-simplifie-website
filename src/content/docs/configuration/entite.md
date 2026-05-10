@@ -25,13 +25,11 @@ La case **« Assujetti à la TVA »** indique que l’entité est assujettie à 
 - L’application prépare les comptes de TVA nécessaires pour la ventilation à la saisie (comptes déductibles / collectées attendus dans le plan).
 - À la **saisie**, les écrans « dépense » et « recette » proposent un **montant TTC**, un **taux de TVA** et une ventilation automatique HT / TVA lorsque vous utilisez cette aide à la saisie.
 
-Si vous **ne** cochez **pas** cette option, la saisie guidée TVA n’est pas disponible pour cette entité (cohérent avec une association ou une structure en franchise de base, selon votre situation réelle).
+Si vous **ne** cochez **pas** cette option, la saisie guidée TVA n’est pas proposée pour cette entité (par exemple si vous êtes en franchise en base ou sans TVA, selon votre situation).
 
-:::note
-Le statut TVA peut être modifié ultérieurement depuis la fiche de l’entité (création et modification utilisent le même paramètre).
-:::
+Vous pouvez **modifier ce choix plus tard** dans la fiche de l’entité.
 
-Après création, la nouvelle entité est en général **sélectionnée automatiquement** comme contexte courant.
+Après création, la nouvelle entité devient en général **l’organisation active** dans l’application.
 
 ## Ce que vous pouvez faire
 

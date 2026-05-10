@@ -3,35 +3,23 @@ title: Saisie de lignes comptables
 description: Parcours guidés (dépense, recette, trésorerie) et saisie avancée multi-lignes.
 ---
 
-La **saisie comptable** enregistre vos opérations sous forme d’**écritures** (une ou plusieurs lignes débit / crédit équilibrées). L’écran est organisé en **trois modes**, accessibles par des boutons en tête de formulaire.
+La **saisie comptable** enregistre vos opérations sous forme d’**écritures** (plusieurs lignes débit et crédit qui se compensent). En haut de l’écran, trois boutons permettent de choisir le mode de travail.
 
-## Pré-requis
+## Avant de saisir
 
-- Une **entité** est sélectionnée.
-- Un **exercice** est disponible et **ouvert** (non clôturé).
-- Pour la trésorerie : au moins un **compte classe 5** configuré dans la configuration de l’exercice.
+- Une **entité** doit être sélectionnée.
+- Un **exercice** doit être ouvert (non clôturé).
+- Pour payer ou encaisser : au moins un **moyen de paiement** (banque ou caisse) doit être défini dans la configuration de l’exercice.
 
-La **date** d’écriture doit être **dans l’exercice** et **pas dans le futur** par rapport à aujourd’hui.
+La **date** de l’opération doit se situer **dans la période de l’exercice** et **ne pas être dans le futur**.
 
----
+## Les trois modes
 
-## Vue d’ensemble des trois modes
-
-| Mode | Usage principal |
-|------|-----------------|
-| **Dépense / recette** | Saisie rapide : charges (6), produits (7), virement interne entre comptes 5 |
-| **Règlement / Encaissement** | Paiement d’une dette fournisseur (401) ou encaissement d’une créance client (411), avec **affectation** sur les lignes ouvertes |
-| **Saisie avancée (multiple)** | Écriture manuelle : journal au choix, N lignes, total débit = total crédit |
-
-L’URL peut mémoriser l’onglet (`?tab=ops` ou `?tab=treasury`) pour revenir au même mode.
-
-```mermaid
-flowchart TB
-  Modes[Écran de saisie]
-  Modes --> Q[Dépense / recette<br/>charges, produits, virement]
-  Modes --> Tr[Règlement / Encaissement<br/>401 ou 411]
-  Modes --> Av[Saisie avancée<br/>écriture multi-lignes]
-```
+| Mode | À quoi ça sert |
+|------|----------------|
+| **Dépense / recette** | Enregistrer vite une charge, un produit ou un virement entre vos comptes banque/caisse |
+| **Règlement / Encaissement** | Régler une facture fournisseur ou encaisser une facture client en affectant le paiement aux bonnes lignes |
+| **Saisie avancée** | Saisir une écriture à la main : plusieurs lignes, journal au choix, total débit égal au total crédit |
 
 ---
 
@@ -39,94 +27,71 @@ flowchart TB
 
 ### Types d’opération
 
-- **Dépense** : comptes de **charges** (classe **6**).
-- **Recette** : comptes de **produits** (classe **7**).
-- **Virement** : mouvement entre deux comptes de **trésorerie** (classe **5**), montant du débit sur le compte destination et crédit sur le compte source (journal **OD**).
+- **Dépense** : choisissez une **charge** (comptes qui commencent par **6**).
+- **Recette** : choisissez un **produit** (comptes qui commencent par **7**).
+- **Virement** : déplacez un montant d’un compte **banque ou caisse** vers un autre (même classe de comptes).
 
-### Montant et TVA (entité assujettie)
+### Montant et TVA
 
-Si l’entité est **assujettie à la TVA**, pour une dépense ou une recette vous saisissez en général un **montant TTC** et un **taux de TVA**. L’application affiche une **prévisualisation HT / TVA** et génère les lignes correspondantes (charge ou produit, TVA déductible ou collectée, et trésorerie ou tiers — voir ci-dessous).
+Si l’entité est **assujettie à la TVA**, vous pouvez saisir un **montant TTC** et un **taux**. L’application affiche la répartition **HT / TVA** et crée les lignes nécessaires (charge ou produit, TVA, et trésorerie ou créance/dette selon le cas).
 
-Si le taux est à **0 %** ou que l’entité **n’est pas** assujettie, la saisie se fait en **montant** simple (sans ventilation TVA automatique).
+Si vous n’êtes pas assujetti, ou si le taux est à **0 %**, vous restez sur un **montant simple**, sans ventilation TVA automatique.
 
-### « Facture déjà payée ? » (dépense et recette uniquement)
+### « Facture déjà payée ? »
 
-Ce choix détermine si la contrepartie immédiate est la **trésorerie** ou un **compte tiers** :
+Pour une dépense ou une recette uniquement, cette question fixe si l’argent **sort ou entre tout de suite** sur votre banque/caisse, ou si vous **devez encore payer ou être payé** :
 
-| Réponse | Dépense | Recette |
-|---------|---------|---------|
-| **Oui** (payé) | Charge débitée, **banque/caisse** créditée (journal **AC**) | **Banque/caisse** débitée, produit crédité (journal **VE**) |
-| **Non** (dette / créance) | Charge débitée, **401 Fournisseurs** crédité ; le paiement se fera via **Règlement fournisseur** | **411 Clients** débité, produit crédité ; l’encaissement via **Encaissement client** |
+| | **Dépense** | **Recette** |
+|---|-------------|-------------|
+| **Oui** (déjà payée / déjà encaissée) | La charge est enregistrée avec la **sortie** sur banque ou caisse | La **entrée** sur banque ou caisse et le produit sont enregistrés ensemble |
+| **Non** (dette ou créance) | La charge est enregistrée avec une **dette fournisseur** ; vous paierez plus tard dans **Règlement fournisseur** | Une **créance client** est enregistrée avec le produit ; vous encaisserez plus tard dans **Encaissement client** |
 
-Le journal de banque (**BQ**) ou caisse (**CA**) est choisi automatiquement selon que le compte de paiement commence par **53** (caisse) ou non.
+Pour une dépense ou recette **non réglée tout de suite**, choisissez un **fournisseur** ou un **client** (vous pouvez en créer un nouveau depuis le même écran). Le libellé peut reprendre le nom du tiers pour vous aider à vous retrouver.
 
-:::tip
-Pour une dépense ou recette **non payée**, vous devez sélectionner un **fournisseur** ou un **client** (vous pouvez en créer un à la volée). Le libellé d’écriture peut être enrichi automatiquement avec le nom du tiers.
-:::
+### Pièces justificatives
 
-### Pièces justificatives (mode rapide)
-
-Vous pouvez attacher un ou plusieurs fichiers PDF / images. Ils sont rattachés à la **ligne principale** de l’opération (charge, produit, ou ligne 401 selon le flux).
+Vous pouvez joindre des fichiers (PDF ou images). Ils sont associés à la ligne principale de l’opération (charge, produit ou ligne fournisseur/client selon le cas).
 
 ---
 
 ## Mode « Règlement / Encaissement »
 
-Ce mode sert à **solder** une dette fournisseur ou à **encaisser** une créance client **sans** repasser par la charge ou le produit : uniquement **trésorerie** contre **401** ou **411**.
+Ce mode sert uniquement à **payer un fournisseur** ou **encaisser chez un client**, sans ressaisir la charge ou le produit : mouvement entre votre **banque ou caisse** et les comptes **fournisseurs** ou **clients**.
 
 1. Choisissez **Règlement fournisseur** ou **Encaissement client**.
-2. Sélectionnez le **tiers** et le **compte de trésorerie**.
-3. Indiquez le **montant** du mouvement.
-4. Le tableau liste les **lignes ouvertes** (401 en crédit pour le fournisseur, 411 en débit pour le client) avec le **reste** à solder. **Affectez** le montant sur une ou plusieurs lignes ; la **somme des affectations doit égaler exactement** le montant du règlement ou de l’encaissement.
+2. Indiquez le **tiers** et le **compte de trésorerie** utilisé.
+3. Saisissez le **montant** du paiement ou de l’encaissement.
+4. Le tableau affiche les **lignes encore ouvertes** avec le **reste à régler**. Répartissez le montant sur une ou plusieurs lignes : la **somme affectée doit égaler exactement** le montant du règlement ou de l’encaissement.
 
-L’enregistrement utilise un mécanisme d’**affectations** : chaque partie du paiement est liée aux lignes d’écriture d’origine, ce qui permet un suivi correct des soldes par facture / pièce.
+Utilisez le bouton **Enregistrer** prévu dans cet onglet (pas celui du formulaire utilisé pour les autres modes).
 
-:::note
-Contrairement au mode rapide, ce mode utilise le bouton d’enregistrement dédié à l’onglet **Règlement / Encaissement** (pas le bouton générique du formulaire principal).
-:::
+### Enchaînement habituel
 
-### Cas d’usage typique
-
-1. **Facture non payée** enregistrée en mode Dépense / recette (401 ou 411).
-2. Plus tard, passage par **Règlement / Encaissement** pour pointer le virement ou l’encaissement réel sur les lignes concernées.
-
-```mermaid
-sequenceDiagram
-  participant U as Utilisateur
-  participant S as Saisie
-  U->>S: Dépense « non payée » + fournisseur
-  S->>S: Écriture charge + 401
-  U->>S: Onglet Règlement / Encaissement
-  S->>S: Liste lignes 401 ouvertes
-  U->>S: Montant + affectations
-  S->>S: Écriture trésorerie + 401 soldée
-```
+En pratique, on enregistre souvent d’abord la **facture non payée** en mode Dépense ou Recette, puis, quand l’argent bouge réellement, on passe par **Règlement / Encaissement** pour solder la ligne correspondante.
 
 ---
 
-## Mode « Saisie avancée (multiple) »
+## Mode « Saisie avancée »
 
-Pour les opérations qui ne rentrent pas dans les assistants (OD diverses, régularisations, écritures complexes) :
+Pour les cas qui ne passent pas par les assistants (écritures diverses, régularisations, opérations avec plusieurs comptes) :
 
-1. Choisissez le **journal** (liste des journaux standards : BQ, CA, AC, VE, OD, etc.).
-2. Saisissez **au moins deux lignes** avec des comptes du plan de l’exercice.
-3. Pour chaque ligne, renseignez **débit** ou **crédit** (une ligne ne porte en principe qu’un seul côté à la fois).
-4. Le **total débit** doit égaler le **total crédit** (à 0,01 € près côté interface).
+1. Choisissez le **journal** adapté (banque, caisse, achats, ventes, opérations diverses, etc.).
+2. Ajoutez **au moins deux lignes** en sélectionnant des comptes du plan.
+3. Pour chaque ligne, indiquez soit le **débit**, soit le **crédit** (en général pas les deux sur la même ligne).
+4. Le **total débit** doit égaler le **total crédit**.
 
-Vous pouvez ajouter ou retirer des lignes, et joindre des **justificatifs** en bout de formulaire (pièces au niveau de l’écriture).
-
-Si aucun journal n’est implicite, le système peut par défaut utiliser les **Opérations diverses (OD)** selon le contexte — en saisie avancée, c’est **vous** qui sélectionnez explicitement le journal.
+Vous pouvez ajouter ou retirer des lignes et joindre des **justificatifs** pour toute l’écriture.
 
 ---
 
-## Règles transverses
+## À retenir
 
-- **Écriture équilibrée** : toute écriture respecte Débit = Crédit.
-- **Exercice modifiable** : les écritures sont refusées si l’exercice est clos ou si l’association est fermée (garde-fous métier).
-- **Tiers** : les opérations sur 401 / 411 sont reliées à un **fournisseur** ou **client** enregistré lorsque le flux le exige, pour l’audit et les états.
+- Chaque écriture est **équilibrée** : les montants au débit et au crédit se compensent.
+- On ne peut pas saisir si l’**exercice est clôturé**.
+- Dès qu’un fournisseur ou un client est nécessaire, sélectionnez le bon **tiers** pour suivre correctement vos dettes et créances.
 
 ## Bonnes pratiques
 
-- Enchaînez **facture (non payée)** puis **règlement / encaissement** plutôt que de tout passer en payé si la réalité est une dette ou une créance.
-- Utilisez la **saisie avancée** pour les cas limites ; gardez le mode rapide pour le flux courant.
-- Joignez les **justificatifs** dès la saisie pour sécuriser votre dossier.
+- Si la facture n’est pas encore payée, utilisez **Non** à « Facture déjà payée ? », puis enregistrez le paiement dans **Règlement / Encaissement** lorsque l’argent est réellement parti ou reçu.
+- Réservez la **saisie avancée** aux cas particuliers ; le mode Dépense / recette suffit pour le quotidien.
+- Joignez les **justificatifs** au moment de la saisie pour constituer un dossier complet.

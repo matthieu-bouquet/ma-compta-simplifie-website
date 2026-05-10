@@ -16,21 +16,21 @@ Vous ne pouvez pas créer deux exercices **strictement identiques** (même entit
 
 ## Soldes de départ (trésorerie — classe 5)
 
-Les soldes d’ouverture concernent les **moyens de paiement** de la classe **5** (banque, caisse, etc.), configurés depuis la **configuration de l’exercice** (liste des exercices → ouvrir l’exercice → bloc « Moyens de paiement »).
+Les soldes d’ouverture concernent vos **comptes banque et caisse**. Configurez-les dans l’écran de **configuration de l’exercice**, section **Moyens de paiement** (après avoir ouvert l’exercice depuis la liste).
 
 ### Ajouter un compte de paiement
 
 Lorsque vous **ajoutez** un compte (numéro, libellé) avec un **solde initial strictement positif** :
 
 - Une écriture d’**A-nouveau** est créée automatiquement à la **date d’ouverture** de l’exercice.
-- Le solde est porté au **débit** du compte de trésorerie (classe 5) et au **crédit** d’un compte de régularisation **890 — Opening balance** (contrepartie technique pour équilibrer l’écriture).
+- Le solde est porté au **débit** du compte banque ou caisse et au **crédit** d’un **compte de report** (numéro 890), uniquement pour équilibrer cette écriture d’ouverture.
 
 ### Modifier le solde de départ
 
 Pour un compte de paiement déjà présent, vous pouvez **éditer** le montant du solde de départ dans le tableau :
 
 - Si le solde passe à **0**, l’écriture d’A-nouveau associée est **supprimée**.
-- Si le solde est **modifié**, les montants de l’écriture existante sont **mis à jour** (toujours en équilibre avec le compte 890).
+- Si le solde est **modifié**, les montants de l’écriture existante sont **mis à jour** en restant équilibrés avec le compte de report.
 
 :::caution
 Un exercice **clôturé** ne permet plus de modifier cette configuration ni d’ajouter des moyens de paiement.
