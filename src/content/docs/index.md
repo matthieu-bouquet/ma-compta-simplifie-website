@@ -18,9 +18,9 @@ Bienvenue dans la documentation de **Ma Compta Simplifié**.
 
 1. [Premiers pas](./premiers-pas/)
 2. Configuration
-   - [Configuration d’entité](./configuration/entite/)
-   - [Plan comptable](./configuration/plan-comptable/)
-   - [Ajout d’exercice](./configuration/exercice/)
+   - [Configuration d’entité](./configuration/entite/) (dont assujetti TVA)
+   - [Plan comptable](./configuration/plan-comptable/) — [Association](./configuration/plan-comptable-association/) · [TPE](./configuration/plan-comptable-tpe/)
+   - [Ajout d’exercice](./configuration/exercice/) (dont soldes de départ)
 3. Saisie & justificatifs
    - [Saisie de lignes comptables](./saisie/lignes-comptables/)
    - [Ajout de document justificatif](./saisie/justificatifs/)

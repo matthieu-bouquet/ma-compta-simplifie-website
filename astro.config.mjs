@@ -28,6 +28,8 @@ export default defineConfig({
           items: [
             { label: 'Configuration d’entité', slug: 'configuration/entite' },
             { label: 'Plan comptable', slug: 'configuration/plan-comptable' },
+            { label: 'Plan comptable — Association', slug: 'configuration/plan-comptable-association' },
+            { label: 'Plan comptable — Entreprise / TPE', slug: 'configuration/plan-comptable-tpe' },
             { label: 'Ajout d’exercice', slug: 'configuration/exercice' },
           ],
         },
