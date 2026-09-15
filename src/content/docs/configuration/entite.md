@@ -1,14 +1,14 @@
 ---
 title: Configuration d’entité
-description: Créer et gérer l’entité (entreprise ou association) pour laquelle vous tenez la comptabilité.
+description: Créer et gérer l’entité (association) pour laquelle vous tenez la comptabilité.
 ---
 
-Une **entité** représente l’organisation pour laquelle vous tenez la comptabilité (entreprise ou association). C’est le premier élément à configurer : sans entité, vous ne pouvez pas créer d’exercice ni saisir d’écritures.
+Une **entité** représente l’**association** pour laquelle vous tenez la comptabilité. C’est le premier élément à configurer : sans entité, vous ne pouvez pas créer d’exercice ni saisir d’écritures.
 
 ## Quand configurer une entité ?
 
 - Au **premier lancement** de l’application, avant de créer un exercice.
-- Lorsque vous gérez **plusieurs organisations** (chaque entité a son propre plan comptable, ses exercices et sa comptabilité).
+- Lorsque vous gérez **plusieurs associations** (chaque entité a son propre plan comptable, ses exercices et sa comptabilité).
 
 ## Créer une entité — pas à pas
 
@@ -21,9 +21,9 @@ Une **entité** représente l’organisation pour laquelle vous tenez la comptab
 
 | Champ | Obligatoire | Description |
 |-------|-------------|-------------|
-| **Nom** | Oui | Nom affiché de l’organisation (ex. « Association Les Archers »). |
+| **Nom** | Oui | Nom affiché de l’association (ex. « Association Les Archers »). |
 | **SIRET** | Non | Identifiant unique si renseigné ; utile pour les documents officiels. |
-| **Forme juridique** | Non | Association, SAS, EURL, etc. Détermine le **modèle de plan comptable** proposé à la création d’exercice (association vs entreprise/TPE). |
+| **Forme juridique** | Non | Association, fondation, etc. Le **modèle de plan comptable association** est utilisé. |
 | **Autre (préciser)** | Si « Autre » | Précision libre lorsque la forme juridique n’est pas dans la liste. |
 | **Assujetti à la TVA** | Non | Case à cocher — voir section dédiée ci-dessous. |
 | **Adresse, code postal, ville** | Non | Coordonnées postales (utiles pour les éditions). |
@@ -71,6 +71,6 @@ En cas de doute sur votre régime de TVA, rapprochez-vous de votre expert-compta
 
 Après avoir créé l’entité :
 
-1. Vérifiez le [plan comptable](./plan-comptable/) (modèle association ou TPE selon la forme juridique).
+1. Vérifiez le [plan comptable](./plan-comptable/) (modèle association).
 2. [Créez un exercice](./exercice/) et initialisez les [soldes de départ](./exercice/#soldes-de-départ-trésorerie--classe-5).
 3. Commencez la [saisie comptable](../saisie/lignes-comptables/).

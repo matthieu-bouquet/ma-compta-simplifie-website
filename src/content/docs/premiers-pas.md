@@ -23,7 +23,7 @@ sudo xattr -cr "/Applications/MaComptaSimplifie.app"
 
 Avant la saisie, préparez les éléments structurants :
 
-- **Entité** : votre entreprise ou association (nom, identifiants, paramètres).
+- **Entité** : votre association (nom, identifiants, paramètres).
 - **Plan comptable** : le référentiel de comptes que vous utiliserez.
 - **Exercice** : la période comptable sur laquelle vous allez saisir.
 

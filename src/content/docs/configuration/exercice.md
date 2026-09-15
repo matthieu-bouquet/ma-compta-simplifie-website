@@ -22,7 +22,7 @@ Un **exercice** définit la **période comptable** sur laquelle vous enregistrez
 
 ### Ce que fait l’application à la création
 
-- **Duplique le plan comptable** de l’entité pour cet exercice (modèle association ou entreprise/TPE selon la forme juridique).
+- **Duplique le plan comptable** de l’entité pour cet exercice (modèle association).
 - Ouvre l’exercice avec le statut **OUVERT**, ce qui autorise la saisie et la configuration.
 - Propose par défaut une période calendaire (1ᵉʳ janvier → 31 décembre de l’année en cours).
 
