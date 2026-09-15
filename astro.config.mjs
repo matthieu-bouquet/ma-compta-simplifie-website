@@ -41,6 +41,12 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Facturation',
+          items: [
+            { label: 'Émettre une facture', slug: 'saisie/factures' },
+          ],
+        },
+        {
           label: 'Éditions & pilotage',
           items: [
             { label: 'Grand livre', slug: 'editions/grand-livre' },

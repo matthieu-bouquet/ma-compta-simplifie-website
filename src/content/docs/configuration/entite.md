@@ -22,12 +22,19 @@ Une **entité** représente l’**association** pour laquelle vous tenez la comp
 | Champ | Obligatoire | Description |
 |-------|-------------|-------------|
 | **Nom** | Oui | Nom affiché de l’association (ex. « Association Les Archers »). |
-| **SIRET** | Non | Identifiant unique si renseigné ; utile pour les documents officiels. |
+| **SIRET** | Non* | Identifiant SIRET ou **numéro RNA** ; *obligatoire pour [émettre une facture](../saisie/factures/). |
 | **Forme juridique** | Non | Association, fondation, etc. Le **modèle de plan comptable association** est utilisé. |
 | **Autre (préciser)** | Si « Autre » | Précision libre lorsque la forme juridique n’est pas dans la liste. |
 | **Assujetti à la TVA** | Non | Case à cocher — voir section dédiée ci-dessous. |
-| **Adresse, code postal, ville** | Non | Coordonnées postales (utiles pour les éditions). |
+| **Adresse, code postal, ville** | Non* | Coordonnées postales ; *obligatoires pour émettre une facture conforme. |
 | **E-mail, téléphone** | Non | Contact de l’entité. |
+
+### Logo (factures)
+
+Dans la fiche de l’entité (**Paramètres → Entités → modifier**), section **Logo** :
+
+- Formats acceptés : **PNG**, **JPG** ou **WEBP** (max. 20 Mo).
+- Le logo apparaît sur les **factures PDF**.
 
 :::tip
 Utilisez un **nom explicite** si vous gérez plusieurs entités : c’est ce nom qui apparaît dans les listes et les sélecteurs.
@@ -73,4 +80,4 @@ Après avoir créé l’entité :
 
 1. Vérifiez le [plan comptable](./plan-comptable/) (modèle association).
 2. [Créez un exercice](./exercice/) et initialisez les [soldes de départ](./exercice/#soldes-de-départ-trésorerie--classe-5).
-3. Commencez la [saisie comptable](../saisie/lignes-comptables/).
+3. Commencez la [saisie comptable](../saisie/lignes-comptables/) ou [émettez une facture](../saisie/factures/).
